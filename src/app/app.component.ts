@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CategoryService } from './services/category/category.service';
+import { Observable } from 'rxjs';
+import { CarCategoryModel } from './model/car-category';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <p *ngFor="let category of categories$ | async">
+      {{ category.categoryName }}
+
+      <span *ngFor="let car of category.cars">
+        {{ car.name }}
+      </span>
+    </p>
+  `,
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'skanleder';
+export class AppComponent implements OnInit {
+  public categories$: Observable<Array<CarCategoryModel>>;
+  constructor(public readonly categoryService: CategoryService) {}
+
+  public ngOnInit(): void {
+    this.categories$ = this.categoryService.getAllCarCategories();
+  }
 }
