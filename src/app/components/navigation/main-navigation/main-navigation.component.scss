@@ -1,0 +1,28 @@
+:host {
+  display: inline-block;
+}
+
+.app-main-navigation {
+  width: 24px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__bar {
+    height: 2px;
+    width: 100%;
+
+    &--white {
+      background-color: white;
+    }
+
+    &--black {
+      background-color: black;
+    }
+    &:nth-of-type(2) {
+      width: 16px;
+    }
+  }
+}
