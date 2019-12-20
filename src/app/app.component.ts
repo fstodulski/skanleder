@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from './services/category/category.service';
 import { Observable } from 'rxjs';
-import { CarCategoryModel } from './model/car-category';
+import { CarCategoryModel } from './model/car/car-category';
 
 @Component({
   selector: 'app-root',
@@ -22,5 +22,6 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     this.categories$ = this.categoryService.getAllCarCategories();
+    this.categoryService.getCarsByCategory(1964849).subscribe(res => console.log(res));
   }
 }
