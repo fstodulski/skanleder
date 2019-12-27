@@ -1,0 +1,18 @@
+:host {
+  display: inline-block;
+}
+
+.app-logo {
+  &__svg {
+    &--black {
+      path {
+        fill: black;
+      }
+    }
+    &--white {
+      path {
+        fill: white;
+      }
+    }
+  }
+}

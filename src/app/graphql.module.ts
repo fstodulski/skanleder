@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { ApolloModule, APOLLO_OPTIONS, Apollo } from 'apollo-angular';
-import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
+import { Apollo, ApolloModule } from 'apollo-angular';
+import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloLink, concat } from 'apollo-link';
 import { HttpHeaders } from '@angular/common/http';

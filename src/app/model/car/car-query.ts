@@ -1,6 +1,6 @@
 import { CarModel } from './car';
 
-export interface CarQuery {
+export interface GetAllCarCategoriesQuery {
   allCarCategories: Array<{
     categoryName: string;
     cars: Array<CarModel>;
