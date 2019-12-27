@@ -1,0 +1,3 @@
+dispatch:
+  - url: 'autotapicerki.com.pl/*'
+    service: skanleder
