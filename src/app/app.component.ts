@@ -6,13 +6,7 @@ import { CarCategoryModel } from './model/car-category';
 @Component({
   selector: 'app-root',
   template: `
-    <p *ngFor="let category of categories$ | async">
-      {{ category.categoryName }}
-
-      <span *ngFor="let car of category.cars">
-        {{ car.name }}
-      </span>
-    </p>
+    <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss'],
 })
