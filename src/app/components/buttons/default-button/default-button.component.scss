@@ -1,0 +1,28 @@
+@import '../../../../styles/mixins';
+
+:host {
+  display: block;
+}
+
+.app-default-button {
+  display: flex;
+  padding: 10px 30px;
+  border-radius: 20px;
+  outline: none;
+  background-color: white;
+  color: black;
+
+  font-weight: 400;
+
+  @include respond-to('sm-phone') {
+    font-size: 12px;
+  }
+
+  @include respond-to('tablet') {
+    font-size: 14px;
+  }
+
+  @include respond-to('md-desktop') {
+    font-size: 16px;
+  }
+}

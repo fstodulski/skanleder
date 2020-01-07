@@ -7,12 +7,13 @@ import { HeadingComponent } from './heading.component';
 // UI
 import { FigureModule } from '../figure/figure.module';
 import { NavigationModule } from '../navigation/navigation.module';
+import { LayoutModule } from '../layout/layout.module';
 
 // Exports Components
 const EXPORTS = [HeadingComponent];
 
 // UI Modules
-const UI = [FigureModule, NavigationModule];
+const UI = [FigureModule, NavigationModule, LayoutModule];
 
 @NgModule({
   declarations: [...EXPORTS],

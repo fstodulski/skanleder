@@ -4,10 +4,12 @@ import { ThemesTypes } from '@shared/types';
 @Component({
   selector: 'app-heading',
   template: `
-    <header class="app-heading">
-      <app-logo [theme]="theme"></app-logo>
-      <app-main-navigation *ngIf="withNavigation" [theme]="theme"></app-main-navigation>
-    </header>
+    <app-content-container>
+      <header class="app-heading">
+        <app-logo [theme]="theme"></app-logo>
+        <app-main-navigation *ngIf="withNavigation" [theme]="theme"></app-main-navigation>
+      </header>
+    </app-content-container>
   `,
   styleUrls: ['./heading.component.scss'],
 })

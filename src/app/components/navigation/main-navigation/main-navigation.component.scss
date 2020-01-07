@@ -9,10 +9,18 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  cursor: pointer;
+
+  &:hover {
+    .app-main-navigation__bar {
+      width: 100%;
+    }
+  }
 
   &__bar {
     height: 2px;
     width: 100%;
+    transition: 0.4s;
 
     &--white {
       background-color: white;

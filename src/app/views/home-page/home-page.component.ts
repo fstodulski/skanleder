@@ -3,9 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-home-page',
   template: `
-    <app-content-container>
-      <app-heading [withNavigation]="true"></app-heading>
-    </app-content-container>
+    <app-heading [withNavigation]="true" theme="white"></app-heading>
     <app-main-page-banner></app-main-page-banner>
   `,
   styleUrls: ['./home-page.component.scss'],

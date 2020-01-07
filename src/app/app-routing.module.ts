@@ -4,13 +4,22 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'prace-techniczne',
-
     loadChildren: () =>
       import('./views/landing-page/landing-page.module').then(module => module.LandingPageModule),
   },
   {
+    path: 'strona-glowna',
+    loadChildren: () =>
+      import('./views/home-page/home-page.module').then(module => module.HomePageModule),
+  },
+  {
+    path: '',
+    redirectTo: '/strona-glowna',
+    pathMatch: 'full',
+  },
+  {
     path: '**',
-    redirectTo: '/prace-techniczne',
+    redirectTo: '/strona-glowna',
   },
 ];
 
