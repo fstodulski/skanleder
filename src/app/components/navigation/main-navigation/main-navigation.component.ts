@@ -7,22 +7,22 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
       <div
         class="app-main-navigation__bar"
         [ngClass]="{
-          'app-main-navigation__bar--white': type == 'white',
-          'app-main-navigation__bar--black': type == 'black'
+          'app-main-navigation__bar--white': theme == 'white',
+          'app-main-navigation__bar--black': theme == 'black'
         }"
       ></div>
       <div
         class="app-main-navigation__bar"
         [ngClass]="{
-          'app-main-navigation__bar--white': type == 'white',
-          'app-main-navigation__bar--black': type == 'black'
+          'app-main-navigation__bar--white': theme == 'white',
+          'app-main-navigation__bar--black': theme == 'black'
         }"
       ></div>
       <div
         class="app-main-navigation__bar"
         [ngClass]="{
-          'app-main-navigation__bar--white': type == 'white',
-          'app-main-navigation__bar--black': type == 'black'
+          'app-main-navigation__bar--white': theme == 'white',
+          'app-main-navigation__bar--black': theme == 'black'
         }"
       ></div>
     </nav>
@@ -31,5 +31,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainNavigationComponent {
-  @Input() public readonly type: 'black' | 'white';
+  @Input() public readonly theme: 'black' | 'white';
 }

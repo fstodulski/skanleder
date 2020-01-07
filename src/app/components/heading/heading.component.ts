@@ -1,13 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ThemesTypes } from '@shared/types';
 
 @Component({
   selector: 'app-heading',
   template: `
     <header class="app-heading">
-      <app-logo type="white"></app-logo>
-      <app-main-navigation type="white"></app-main-navigation>
+      <app-logo [theme]="theme"></app-logo>
+      <app-main-navigation *ngIf="withNavigation" [theme]="theme"></app-main-navigation>
     </header>
   `,
   styleUrls: ['./heading.component.scss'],
 })
-export class HeadingComponent {}
+export class HeadingComponent {
+  @Input() public readonly withNavigation: boolean;
+  @Input() public readonly theme: ThemesTypes;
+}

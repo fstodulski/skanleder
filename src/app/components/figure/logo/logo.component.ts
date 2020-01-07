@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ThemesTypes } from '@shared/types';
 
 @Component({
   selector: 'app-logo',
@@ -7,8 +8,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
       <svg
         class="app-logo__svg"
         [ngClass]="{
-          'app-logo__svg--black': type == 'black',
-          'app-logo__svg--white': type == 'white'
+          'app-logo__svg--black': theme == 'black',
+          'app-logo__svg--white': theme == 'white'
         }"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -39,5 +40,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LogoComponent {
-  @Input() public readonly type: 'black' | 'white';
+  @Input() public readonly theme: ThemesTypes;
 }

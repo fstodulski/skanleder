@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-home-page',
   template: `
     <app-content-container>
-      <app-heading></app-heading>
+      <app-heading [withNavigation]="true"></app-heading>
     </app-content-container>
     <app-main-page-banner></app-main-page-banner>
   `,
