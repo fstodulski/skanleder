@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+.app-selected-car-page {
+  padding-top: 40px;
+
+  &__main {
+  }
+
+  &__go-back {
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  &__car-details {
+    margin-top: 50px;
+  }
+}
+
+// Car Details
+.car-details {
+  &__name {
+    font-size: 42px;
+    font-weight: 900;
+    margin: 0;
+  }
+  &__category {
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+  }
+}

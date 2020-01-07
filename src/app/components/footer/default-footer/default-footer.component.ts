@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
         <p class="content">ul. Zachodnia 2</p>
         <p class="content">11-500, Giżycko</p>
         <p class="content">
-          Tel: <a class="content__href" href="phoneto:+48 602 875 244">+48 602 875 244</a>
+          Tel: <a class="content__href" href="tel:+48 602 875 244">+48 602 875 244</a>
         </p>
         <p class="content">
           <a class="content__href" href="mailto:skanleder@wp.pl">
