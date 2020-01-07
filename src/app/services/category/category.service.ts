@@ -15,7 +15,7 @@ import { GetAllCarCategoriesQuery } from '../../model/car/car-query';
   providedIn: 'root',
 })
 export class CategoryService {
-  constructor(private apollo: Apollo) {}
+  constructor(private readonly apollo: Apollo) {}
 
   public getAllCarCategories(): Observable<Array<CarCategoryModel>> {
     return this.apollo

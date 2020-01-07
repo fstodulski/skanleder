@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { CarService } from '../../services/car/car.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-selected-car-page',
@@ -13,16 +17,18 @@ import { Component, OnInit } from '@angular/core';
         <section class="app-selected-car-page__car-details">
           <article class="car-details">
             <h1 class="car-details__name">
-              Audi A4
+              {{ (selectedCarData$ | async).name }}
             </h1>
             <p class="car-details__category">
-              Audi
+              {{ (selectedCarData$ | async).carCategoryName.categoryName }}
             </p>
           </article>
         </section>
 
         <section class="app-selected-car-page__images-presentation">
-          <app-selected-car-images-presentation></app-selected-car-images-presentation>
+          <app-selected-car-images-presentation
+            [carPhotos]="(selectedCarData$ | async).photos"
+          ></app-selected-car-images-presentation>
         </section>
       </app-content-container>
     </main>
@@ -30,7 +36,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./selected-car-page.component.scss'],
 })
 export class SelectedCarPageComponent implements OnInit {
-  constructor() {}
+  public selectedCarData$: Observable<any>;
 
-  ngOnInit() {}
+  constructor(private readonly route: ActivatedRoute, private readonly carService: CarService) {}
+
+  ngOnInit(): void {
+    this.selectedCarData$ = this.route.paramMap.pipe(
+      switchMap(params => {
+        const slug = params.get('slug');
+
+        return this.carService.getCarBySlug(slug);
+      })
+    );
+  }
 }
