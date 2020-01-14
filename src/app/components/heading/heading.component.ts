@@ -31,7 +31,7 @@ export class HeadingComponent implements OnInit {
 
   constructor(@Inject(PLATFORM_ID) private readonly platformId: string) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       const windowEvent = fromEvent(window, 'scroll');
 

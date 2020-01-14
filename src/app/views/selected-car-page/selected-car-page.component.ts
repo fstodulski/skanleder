@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { CarService } from '../../services/car/car.service';
 import { switchMap } from 'rxjs/operators';
+
+// Services
+import { CarService } from '../../services/car/car.service';
 
 @Component({
   selector: 'app-selected-car-page',

@@ -7,6 +7,7 @@ import { MainPageBannerComponent } from './main-page-banner/main-page-banner.com
 // UI
 import { LayoutModule } from '../layout/layout.module';
 import { ButtonsModule } from '../buttons/buttons.module';
+import { RouterModule } from '@angular/router';
 
 // Exports
 const EXPORTS = [MainPageBannerComponent];
@@ -15,7 +16,7 @@ const UI = [LayoutModule, ButtonsModule];
 
 @NgModule({
   declarations: [...EXPORTS],
-  imports: [CommonModule, ...UI],
+  imports: [CommonModule, ...UI, RouterModule],
   exports: [...EXPORTS],
 })
 export class BannersModule {}

@@ -20,6 +20,14 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'prace',
+    pathMatch: 'full',
+    loadChildren: () =>
+      import('./views/car-categories-page/car-categories-page.module').then(
+        module => module.CarCategoriesPageModule
+      ),
+  },
+  {
     path: '',
     redirectTo: '/strona-glowna',
     pathMatch: 'full',

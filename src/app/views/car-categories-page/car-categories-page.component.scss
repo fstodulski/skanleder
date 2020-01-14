@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.app-car-categories-page {
+  padding-top: 40px;
+
+  &__main {
+  }
+
+  &__go-back {
+    font-weight: 300;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}

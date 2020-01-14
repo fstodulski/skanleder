@@ -10,8 +10,9 @@ import { SelectedCarPageComponent } from './selected-car-page.component';
 import { LayoutModule } from '../../components/layout/layout.module';
 import { HeadingModule } from '../../components/heading/heading.module';
 import { SelectedCarImagesPresentationModule } from '../../containers/selected-car-images-presentation/selected-car-images-presentation.module';
+import { NavigationModule } from '../../components/navigation/navigation.module';
 
-const UI = [LayoutModule, HeadingModule, SelectedCarImagesPresentationModule];
+const UI = [LayoutModule, HeadingModule, SelectedCarImagesPresentationModule, NavigationModule];
 
 @NgModule({
   declarations: [SelectedCarPageComponent],

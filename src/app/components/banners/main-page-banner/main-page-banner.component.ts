@@ -22,7 +22,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
           <h3 class="banner-text-wrapper__sub-heading">
             Przekonaj się sam
           </h3>
-          <app-default-button>
+          <app-default-button routerLink="/prace">
             Nasze prace
           </app-default-button>
         </article>
