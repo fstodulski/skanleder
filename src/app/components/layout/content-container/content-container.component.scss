@@ -1,3 +1,5 @@
+@import '../../../../styles/mixins';
+
 :host {
   display: flex;
 }
@@ -7,5 +9,12 @@
   max-width: 1330px;
   width: 100%;
   margin: 0 auto;
-  padding: 30px;
+
+  @include respond-to('sm-phone') {
+    padding: 30px 15px;
+  }
+
+  @include respond-to('md-desktop') {
+    padding: 30px;
+  }
 }

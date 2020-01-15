@@ -11,8 +11,15 @@ import { LayoutModule } from '../../components/layout/layout.module';
 import { HeadingModule } from '../../components/heading/heading.module';
 import { SelectedCarImagesPresentationModule } from '../../containers/selected-car-images-presentation/selected-car-images-presentation.module';
 import { NavigationModule } from '../../components/navigation/navigation.module';
+import { FooterModule } from '../../components/footer/footer.module';
 
-const UI = [LayoutModule, HeadingModule, SelectedCarImagesPresentationModule, NavigationModule];
+const UI = [
+  LayoutModule,
+  FooterModule,
+  HeadingModule,
+  SelectedCarImagesPresentationModule,
+  NavigationModule,
+];
 
 @NgModule({
   declarations: [SelectedCarPageComponent],

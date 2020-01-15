@@ -1,3 +1,5 @@
+@import '../../../styles/mixins';
+
 :host {
   display: block;
 }
@@ -8,8 +10,19 @@
   &__list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+
+    @include respond-to('md-phone') {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include respond-to('lg-phone') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('md-desktop') {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__list-element {
@@ -29,11 +42,16 @@
     height: 100%;
     overflow: hidden;
     object-fit: cover;
+    position: relative;
   }
 
   &__image {
     width: 100%;
     height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__preview {

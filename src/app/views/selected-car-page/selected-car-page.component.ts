@@ -12,7 +12,7 @@ import { CarService } from '../../services/car/car.service';
     <app-heading [withNavigation]="true" theme="black"></app-heading>
     <main class="app-selected-car-page">
       <app-content-container class="app-selected-car-page__main">
-        <span class="app-selected-car-page__go-back" routerLink="/prace">
+        <span class="app-selected-car-page__go-back" routerLink="/wykonane-prace">
           Wróć do listy
         </span>
 
@@ -34,6 +34,9 @@ import { CarService } from '../../services/car/car.service';
         </section>
       </app-content-container>
     </main>
+    <app-content-container>
+      <app-default-footer></app-default-footer>
+    </app-content-container>
   `,
   styleUrls: ['./selected-car-page.component.scss'],
 })

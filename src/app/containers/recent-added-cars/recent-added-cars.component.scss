@@ -1,9 +1,17 @@
+@import '../../../styles/mixins';
+
 :host {
   display: block;
 }
 
 .app-recent-added-cars {
-  padding: 0 40px 0 30px;
+  @include respond-to('md-phone') {
+    padding: 0 10px 0 10px;
+  }
+
+  @include respond-to('md-desktop') {
+    padding: 0 40px 0 30px;
+  }
 
   &__heading {
     font-size: 24px;
@@ -14,7 +22,18 @@
   &__list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+
+    @include respond-to('md-phone') {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include respond-to('lg-phone') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('md-desktop') {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

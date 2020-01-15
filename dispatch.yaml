@@ -1,3 +1,12 @@
 dispatch:
   - url: 'skanleder.eu/*'
     service: skanleder
+
+  - url: 'autotapicerki.eu/*'
+    service: skanleder
+
+  - url: 'autotapicerki.com.pl/*'
+    service: skanleder
+
+  - url: 'skanleder.pl/*'
+    service: skanleder
