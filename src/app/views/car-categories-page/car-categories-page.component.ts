@@ -9,8 +9,7 @@ import { Component, OnInit } from '@angular/core';
         <span class="app-car-categories-page__go-back" routerLink="/">
           Wróć do strony głównej
         </span>
-
-        <app-car-categories-page></app-car-categories-page>
+        <app-car-categories></app-car-categories>
       </app-content-container>
     </main>
   `,

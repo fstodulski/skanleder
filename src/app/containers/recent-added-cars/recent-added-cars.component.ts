@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
           <li
             class="app-recent-added-cars__list-element"
             *ngFor="let car of carList"
-            [routerLink]="['/prace', car.slug]"
+            [routerLink]="['/wykonane-prace', car.slug]"
           >
             <app-car-box [car]="car"></app-car-box>
           </li>

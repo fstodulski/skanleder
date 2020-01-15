@@ -13,18 +13,17 @@ const routes: Routes = [
       import('./views/home-page/home-page.module').then(module => module.HomePageModule),
   },
   {
-    path: 'prace/:slug',
-    loadChildren: () =>
-      import('./views/selected-car-page/selected-car-page.module').then(
-        module => module.SelectedCarPageModule
-      ),
-  },
-  {
-    path: 'prace',
-    pathMatch: 'full',
+    path: 'wykonane-prace',
     loadChildren: () =>
       import('./views/car-categories-page/car-categories-page.module').then(
         module => module.CarCategoriesPageModule
+      ),
+  },
+  {
+    path: 'wykonane-prace/:slug',
+    loadChildren: () =>
+      import('./views/selected-car-page/selected-car-page.module').then(
+        module => module.SelectedCarPageModule
       ),
   },
   {
