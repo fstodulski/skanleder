@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.app-car-categories {
+  &__heading {
+    font-size: 32px;
+    font-weight: 900;
+  }
+}
