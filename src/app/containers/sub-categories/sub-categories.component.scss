@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+.app-sub-categories {
+  margin-top: 40px;
+  padding-left: 50px;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__list-element {
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  .sub-category {
+    font-size: 22px;
+    font-weight: 400;
+    transition: 0.3s;
+    color: rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      color: rgba(0, 0, 0, 1);
+    }
+
+    &--active {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+}

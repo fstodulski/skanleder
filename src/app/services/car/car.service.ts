@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import {
   getAllCarCategories,
   getAllParentCarCategories,
+  getAllSubCategories,
   getCarBySlug,
   getCarsByCategory,
 } from '../../graphql/query/car';
@@ -19,6 +20,7 @@ import { CarsByCategoryQuery } from '../../model/category/cars-by-category.query
 export class CarService {
   constructor(private readonly apollo: Apollo) {}
 
+  // In usage
   public getAllParentCategories(): Observable<any> {
     return this.apollo
       .query({
@@ -29,6 +31,23 @@ export class CarService {
           const { allParentCarCategories } = data;
 
           return allParentCarCategories;
+        })
+      );
+  }
+
+  public getAllSubCategories(parentCategoryName: string): Observable<any> {
+    return this.apollo
+      .query({
+        query: getAllSubCategories,
+        variables: {
+          parentCategoryName,
+        },
+      })
+      .pipe(
+        map(({ data }: any) => {
+          const { parentCarCategory } = data;
+
+          return parentCarCategory.subCategories;
         })
       );
   }

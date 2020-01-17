@@ -39,6 +39,17 @@ export const getAllCarCategories = gql`
   }
 `;
 
+export const getAllSubCategories = gql`
+  query getAllSubCategories($parentCategoryName: String) {
+    parentCarCategory(filter: { parentCategoryName: { eq: $parentCategoryName } }) {
+      subCategories {
+        carCategoryName
+        id
+      }
+    }
+  }
+`;
+
 export const getCarsByCategory = gql`
   query getCarsByCategory($carCategoryId: ItemId) {
     carCategory(filter: { id: { eq: $carCategoryId } }, orderBy: _createdAt_ASC) {
