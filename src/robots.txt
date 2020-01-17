@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.skanleder.eu/sitemap.xml
+Sitemap: https://www.autotapicerki.eu/sitemap.xml

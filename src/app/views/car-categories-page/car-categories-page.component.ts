@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
           Wróć do strony głównej
         </span>
 
-        <app-car-categories [categories]="carCategories$ | async"></app-car-categories>
+        <app-parent-categories [parentCategories]="carCategories$ | async"></app-parent-categories>
       </app-content-container>
     </main>
   `,

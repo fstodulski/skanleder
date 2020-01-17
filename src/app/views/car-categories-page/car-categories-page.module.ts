@@ -9,9 +9,9 @@ import { CarCategoriesPageComponent } from './car-categories-page.component';
 // UI
 import { LayoutModule } from '../../components/layout/layout.module';
 import { HeadingModule } from '../../components/heading/heading.module';
-import { CarCategoriesModule } from '../../containers/car-categories/car-categories.module';
+import { ParentCategoriesModule } from '../../containers/parent-categories/parent-categories.module';
 
-const UI = [LayoutModule, HeadingModule, CarCategoriesModule];
+const UI = [LayoutModule, HeadingModule, ParentCategoriesModule];
 
 @NgModule({
   declarations: [CarCategoriesPageComponent],

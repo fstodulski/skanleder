@@ -22,7 +22,7 @@ import { CarService } from '../../services/car/car.service';
               {{ (selectedCarData$ | async).name }}
             </h1>
             <p class="car-details__category">
-              {{ (selectedCarData$ | async).carCategoryName.categoryName }}
+              {{ (selectedCarData$ | async).carCategoryName.carCategoryName }}
             </p>
           </article>
         </section>

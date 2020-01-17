@@ -1,17 +1,18 @@
 import gql from 'graphql-tag';
-import { carFragment } from '../fragments/cars';
 
 export const getCarBySlug = gql`
   query getCarBySlug($slug: String) {
     car(filter: { slug: { eq: $slug } }) {
-      mainPhoto {
-        alt
-        url
-      }
       carCategoryName {
-        categoryName
+        carCategoryName
+        id
+      }
+      mainPhoto {
+        url
+        alt
       }
       name
+      slug
       photos {
         alt
         url
