@@ -5,14 +5,12 @@ import { map } from 'rxjs/operators';
 
 // GraphQL
 import {
-  getAllCarCategories,
   getAllParentCarCategories,
   getAllSubCategories,
   getCarBySlug,
   getCarsByCategory,
+  getRecentlyAddedCars,
 } from '../../graphql/query/car';
-import { CarCategoryModel } from '../../model/car/car-category';
-import { CarsByCategoryQuery } from '../../model/category/cars-by-category.query';
 
 @Injectable({
   providedIn: 'root',
@@ -52,33 +50,23 @@ export class CarService {
       );
   }
 
-  public getAllCarCategories(): Observable<any> {
+  public getRecentlyAddedCars(): Observable<any> {
     return this.apollo
       .query({
-        query: getAllCarCategories,
+        query: getRecentlyAddedCars,
       })
-      .pipe(
-        map(({ data }: any) => {
-          const { allParentCarCategories } = data;
-
-          return allParentCarCategories;
-        })
-      );
+      .pipe(map(({ data }: any) => data.allCars));
   }
 
-  public getCarsByCategory(carCategoryId: number): Observable<any> {
+  public getCarsByCategory(carCategoryName: string): Observable<any> {
     return this.apollo
-      .query<CarsByCategoryQuery>({
+      .query({
         query: getCarsByCategory,
         variables: {
-          carCategoryId,
+          carCategoryName,
         },
       })
-      .pipe(
-        map(({ data }) => {
-          return data.carCategory.cars;
-        })
-      );
+      .pipe(map(({ data }: any) => data.carCategory.cars));
   }
 
   public getCarBySlug(slug: string): Observable<any> {

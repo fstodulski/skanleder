@@ -4,15 +4,7 @@
   display: block;
 }
 
-.app-recent-added-cars {
-  @include respond-to('md-phone') {
-    padding: 0 10px 0 10px;
-  }
-
-  @include respond-to('md-desktop') {
-    padding: 0 40px 0 30px;
-  }
-
+.app-cars-list-grid {
   &__heading {
     font-size: 24px;
     font-weight: 900;

@@ -51,16 +51,29 @@ export const getAllSubCategories = gql`
 `;
 
 export const getCarsByCategory = gql`
-  query getCarsByCategory($carCategoryId: ItemId) {
-    carCategory(filter: { id: { eq: $carCategoryId } }, orderBy: _createdAt_ASC) {
+  query getCarsByCategory($carCategoryName: String) {
+    carCategory(filter: { carCategoryName: { eq: $carCategoryName } }, orderBy: _createdAt_ASC) {
       cars {
         mainPhoto {
           url
-          title
+          alt
         }
         slug
         name
       }
+    }
+  }
+`;
+
+export const getRecentlyAddedCars = gql`
+  query getRecentlyAddedCars {
+    allCars(first: "10", orderBy: _createdAt_ASC) {
+      name
+      mainPhoto {
+        url
+        alt
+      }
+      slug
     }
   }
 `;

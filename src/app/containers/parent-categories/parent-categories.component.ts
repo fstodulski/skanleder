@@ -47,9 +47,11 @@ export class ParentCategoriesComponent implements OnInit {
       map(res => {
         const brand = res.get('brand');
 
-        this.fetchSubCategories(brand);
+        if (brand) {
+          this.fetchSubCategories(brand);
 
-        return brand;
+          return brand;
+        }
       })
     );
   }

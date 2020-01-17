@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from '../../services/car/car.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-car-categories-page',
@@ -13,6 +15,10 @@ import { Observable } from 'rxjs';
         </span>
 
         <app-parent-categories [parentCategories]="carCategories$ | async"></app-parent-categories>
+        <app-cars-list-grid
+          [cars]="cars$ | async"
+          class="app-car-categories-page__cars-list-grid"
+        ></app-cars-list-grid>
       </app-content-container>
     </main>
   `,
@@ -20,10 +26,16 @@ import { Observable } from 'rxjs';
 })
 export class CarCategoriesPageComponent implements OnInit {
   public carCategories$: Observable<any>;
+  public cars$: Observable<Array<any>>;
 
-  constructor(private readonly carService: CarService) {}
+  constructor(private readonly carService: CarService, private readonly route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.carCategories$ = this.carService.getAllParentCategories();
+
+    this.cars$ = this.route.queryParamMap.pipe(
+      map(query => query.get('model')),
+      switchMap(model => (model ? this.carService.getCarsByCategory(model) : of([])))
+    );
   }
 }

@@ -10,8 +10,9 @@ import { CarCategoriesPageComponent } from './car-categories-page.component';
 import { LayoutModule } from '../../components/layout/layout.module';
 import { HeadingModule } from '../../components/heading/heading.module';
 import { ParentCategoriesModule } from '../../containers/parent-categories/parent-categories.module';
+import { CarsListGridModule } from '../../components/cars-list-grid/cars-list-grid.module';
 
-const UI = [LayoutModule, HeadingModule, ParentCategoriesModule];
+const UI = [LayoutModule, HeadingModule, ParentCategoriesModule, CarsListGridModule];
 
 @NgModule({
   declarations: [CarCategoriesPageComponent],
