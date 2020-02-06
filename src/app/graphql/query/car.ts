@@ -7,6 +7,9 @@ export const getCarBySlug = gql`
         carCategoryName
         id
       }
+      brand {
+        parentCategoryName
+      }
       mainPhoto {
         url
         alt

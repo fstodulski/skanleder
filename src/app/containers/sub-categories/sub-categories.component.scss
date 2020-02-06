@@ -4,7 +4,7 @@
 
 .app-sub-categories {
   margin-top: 40px;
-  padding-left: 50px;
+  padding-left: 25px;
 
   &__list {
     list-style: none;
@@ -12,7 +12,9 @@
     flex-wrap: wrap;
   }
   &__list-element {
-    margin-right: 20px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
 
     &:last-of-type {
       margin: 0;
