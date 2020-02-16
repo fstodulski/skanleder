@@ -28,7 +28,6 @@ const DIST_FOLDER = join(process.cwd(), 'dist/browser');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {
-  AppServerModuleNgFactory,
   AppServerModule,
   LAZY_MODULE_MAP,
   ngExpressEngine,
