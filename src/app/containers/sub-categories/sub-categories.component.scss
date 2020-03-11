@@ -1,10 +1,19 @@
+@import '../../../styles/mixins';
+
 :host {
   display: block;
 }
 
 .app-sub-categories {
-  margin-top: 40px;
-  padding-left: 50px;
+  padding-left: 25px;
+
+  @include respond-to('md-phone') {
+    margin-top: 15px;
+  }
+
+  @include respond-to('md-desktop') {
+    margin-top: 40px;
+  }
 
   &__list {
     list-style: none;
@@ -12,7 +21,9 @@
     flex-wrap: wrap;
   }
   &__list-element {
-    margin-right: 20px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
 
     &:last-of-type {
       margin: 0;
@@ -20,10 +31,21 @@
   }
 
   .sub-category {
-    font-size: 22px;
     font-weight: 400;
     transition: 0.3s;
     color: rgba(0, 0, 0, 0.4);
+
+    @include respond-to('md-phone') {
+      font-size: 16px;
+    }
+
+    @include respond-to('lg-phone') {
+      font-size: 18px;
+    }
+
+    @include respond-to('md-desktop') {
+      font-size: 22px;
+    }
 
     &:hover {
       color: rgba(0, 0, 0, 1);

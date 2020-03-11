@@ -3,6 +3,7 @@ import { CarService } from '../../services/car/car.service';
 import { Observable, of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-car-categories-page',
@@ -28,14 +29,23 @@ export class CarCategoriesPageComponent implements OnInit {
   public carCategories$: Observable<any>;
   public cars$: Observable<Array<any>>;
 
-  constructor(private readonly carService: CarService, private readonly route: ActivatedRoute) {}
+  constructor(
+    private readonly title: Title,
+    private readonly carService: CarService,
+    private readonly route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.setTitle();
     this.carCategories$ = this.carService.getAllParentCategories();
 
     this.cars$ = this.route.queryParamMap.pipe(
       map(query => query.get('model')),
       switchMap(model => (model ? this.carService.getCarsByCategory(model) : of([])))
     );
+  }
+
+  private setTitle(): void {
+    this.title.setTitle('Skanleder - Wykonane Prace');
   }
 }

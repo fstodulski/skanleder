@@ -7,6 +7,9 @@ export const getCarBySlug = gql`
         carCategoryName
         id
       }
+      brand {
+        parentCategoryName
+      }
       mainPhoto {
         url
         alt
@@ -67,7 +70,7 @@ export const getCarsByCategory = gql`
 
 export const getRecentlyAddedCars = gql`
   query getRecentlyAddedCars {
-    allCars(first: "10", orderBy: _createdAt_ASC) {
+    allCars(first: "8", orderBy: _createdAt_ASC) {
       name
       mainPhoto {
         url

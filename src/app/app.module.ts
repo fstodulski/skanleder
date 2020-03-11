@@ -13,7 +13,7 @@ import { environment } from '../environments/environment';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({ appId: 'SkanlederApp' }),
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,

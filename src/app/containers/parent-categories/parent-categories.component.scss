@@ -1,3 +1,5 @@
+@import '../../../styles/mixins';
+
 :host {
   display: block;
 }
@@ -13,6 +15,8 @@
 
   &__list-element {
     margin-right: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
 
     &:last-of-type {
       margin: 0;
@@ -20,10 +24,21 @@
   }
 
   .parent-category {
-    font-size: 28px;
     font-weight: 400;
     transition: 0.3s;
     color: rgba(0, 0, 0, 0.4);
+
+    @include respond-to('md-phone') {
+      font-size: 18px;
+    }
+
+    @include respond-to('lg-phone') {
+      font-size: 22px;
+    }
+
+    @include respond-to('md-desktop') {
+      font-size: 28px;
+    }
 
     &:hover {
       color: rgba(0, 0, 0, 1);

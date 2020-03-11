@@ -3,6 +3,7 @@ import { fromEvent, Observable } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 import { distinctUntilChanged, map, shareReplay, startWith } from 'rxjs/operators';
 import { CarService } from '../../services/car/car.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home-page',
@@ -26,11 +27,14 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     @Inject(PLATFORM_ID) private readonly platformId: string,
-    private readonly carService: CarService
+    private readonly carService: CarService,
+    private readonly title: Title
   ) {}
 
   ngOnInit(): void {
     this.cars$ = this.carService.getRecentlyAddedCars();
+
+    this.title.setTitle('Skanleder - Strona Główna');
 
     if (isPlatformBrowser(this.platformId)) {
       const windowEvent = fromEvent(window, 'scroll');
