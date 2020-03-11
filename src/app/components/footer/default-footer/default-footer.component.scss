@@ -18,6 +18,15 @@
     font-size: 14px;
     color: $gray-1;
 
+    &--header {
+      font-size: 16px;
+    }
+
+    &--sub-header {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
     &__href {
       text-decoration: none;
       color: inherit;

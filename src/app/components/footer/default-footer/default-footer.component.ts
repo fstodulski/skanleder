@@ -5,6 +5,9 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <footer class="app-default-footer">
       <article class="app-default-footer__content">
+        <h4 class="content content--header">Grzegorz Skrzypek - Skanleder</h4>
+        <h5 class="content content--sub-header">Usługi Tapicerskie</h5>
+        <br />
         <p class="content">ul. Zachodnia 2</p>
         <p class="content">11-500, Giżycko</p>
         <p class="content">
